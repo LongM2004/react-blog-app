@@ -177,3 +177,132 @@ textarea::placeholder {
   color: #cccccc;
 }
 
+input {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #666666;
+  border-radius: 8px;
+  background: #121212;
+  color: #ffffff;
+  font: inherit;
+}
+
+.form-field {
+  margin-bottom: 20px;
+}
+
+.login-card {
+  max-width: 480px;
+  margin: 24px auto;
+}
+
+.login-card h1 {
+  font-size: 2.25rem;
+}
+
+.error-message {
+  color: #ffb4b4;
+}
+
+.demo-note {
+  margin-top: 24px;
+  color: #cccccc;
+  font-size: 0.9rem;
+}
+
+nav {
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.nav-button {
+  margin: 0;
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+}
+
+.nav-button:hover {
+  background: transparent;
+  text-decoration: underline;
+}
+
+.landing-hero {
+  padding: 48px 0 64px;
+}
+
+.landing-hero h1 {
+  max-width: 760px;
+}
+
+.landing-description {
+  max-width: 620px;
+  color: #cccccc;
+  font-size: 1.1rem;
+}
+
+.landing-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.button-link {
+  display: inline-block;
+  padding: 12px 20px;
+  border: 1px solid #666666;
+  border-radius: 8px;
+  background: #444444;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+}
+
+.button-link:hover {
+  background: #5a5a5a;
+}
+
+.button-secondary {
+  background: transparent;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.feature-grid .card {
+  margin-bottom: 0;
+  padding: 24px;
+}
+
+.feature-grid h2 {
+  font-size: 1.25rem;
+}
+
+.feature-grid p {
+  color: #cccccc;
+}
+
+@media (max-width: 600px) {
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .landing-hero {
+    padding: 24px 0 40px;
+  }
+
+  .landing-actions {
+    flex-direction: column;
+  }
+
+  nav {
+    gap: 16px;
+  }
+}

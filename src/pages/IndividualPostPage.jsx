@@ -1,9 +1,11 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { AuthContext } from "../context/AuthContext";
 import { Link, useParams } from "react-router";
 import CommentForm from "../components/CommentForm";
 
 export default function IndividualPostPage() {
   const { id } = useParams();
+  const { user: currentUser } = useContext(AuthContext);
   const [commentsByPost, setCommentsByPost] = useState({});
   const [user, setUser] = useState(null);
   const [post, setPost] = useState(null);
@@ -74,7 +76,7 @@ export default function IndividualPostPage() {
     return (
       <>
         <p>{error}</p>
-        <Link to="/">Back to posts</Link>
+        <Link to="/posts">Back to posts</Link>
       </>
     );
   }
@@ -83,7 +85,7 @@ export default function IndividualPostPage() {
     return (
       <>
         <h1>Post not found</h1>
-        <Link to="/">Back to posts</Link>
+        <Link to="/posts">Back to posts</Link>
       </>
     );
   }
@@ -120,10 +122,21 @@ export default function IndividualPostPage() {
         )}
 
         <h3>Leave a comment</h3>
-        <CommentForm key={id} postId={id} onAddComment={addComment} />
+
+        {currentUser ? (
+          <CommentForm
+            key={`${id}-${currentUser.username}`}
+            postId={id}
+            onAddComment={addComment}
+          />
+        ) : (
+          <p>
+            Please <Link to="/login">log in</Link> to leave a comment.
+          </p>
+        )}
       </section>
 
-      <Link to="/">Back to posts</Link>
+      <Link to="/posts">Back to posts</Link>
     </>
   );
 }

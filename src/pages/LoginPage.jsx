@@ -1,9 +1,9 @@
 import { useContext, useState } from "react";
-import { Navigate, useNavigate } from "react-router";
+import { useNavigate } from "react-router";
 import { AuthContext } from "../context/AuthContext";
 
 export default function LoginPage() {
-  const { user, login } = useContext(AuthContext);
+  const { login } = useContext(AuthContext);
   const navigate = useNavigate();
 
   const [username, setUsername] = useState("");
@@ -26,11 +26,7 @@ export default function LoginPage() {
       return;
     }
 
-    navigate("/posts", { replace: true });
-  }
-
-  if (user) {
-    return <Navigate to="/posts" replace />;
+    void navigate("/posts", { replace: true });
   }
 
   return (

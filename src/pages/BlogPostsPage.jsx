@@ -14,7 +14,7 @@ export default function BlogPostsPage() {
   return (
     <>
       <section className="intro">
-        <p className="eyebrow">IDEAS - EXPERIENCES - DISCOVERIES</p>
+        <p className="eyebrow">SOMETHING INTERESTING</p>
         <h1>Random Blogs</h1>
         <p>Thoughts and Ideas</p>
       </section>
